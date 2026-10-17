@@ -1,0 +1,39 @@
+{
+  "name": "fremont-patrol-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --use-env-proxy node_modules/vite/bin/vite.js --host 0.0.0.0",
+    "dev:local": "node --use-env-proxy node_modules/vite/bin/vite.js --host 127.0.0.1 --open",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest run && node --test scripts/*.test.mjs",
+    "test:watch": "vitest",
+    "data:import": "node --use-env-proxy scripts/import-roads.mjs",
+    "data:validate": "node scripts/validate-import.mjs",
+    "test:browser": "playwright test",
+    "build:standalone": "node scripts/build-standalone.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "maplibre-gl": "^5.9.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=24.5.0"
+  }
+}

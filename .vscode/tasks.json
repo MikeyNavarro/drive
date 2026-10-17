@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install simulator dependencies",
+      "type": "shell",
+      "command": "npm",
+      "args": ["ci", "--no-audit", "--no-fund"],
+      "windows": { "command": "npm.cmd" },
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Start simulator",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev:local"],
+      "windows": { "command": "npm.cmd" },
+      "options": { "cwd": "${workspaceFolder}" },
+      "dependsOn": ["Install simulator dependencies"],
+      "dependsOrder": "sequence",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    }
+  ]
+}
